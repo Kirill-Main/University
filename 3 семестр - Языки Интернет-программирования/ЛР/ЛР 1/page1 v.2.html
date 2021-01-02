@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ЛР 1 Пункт 1 v.2</title>
+</head>
+<body>
+    <h1>Произвольный текст</h1>
+    <div>
+        <span>Заголовок имеет тег <strong>&lt;h1&gt;</strong>. <span style="color:red">Посмотрите</span>, насколько он большой!</span>
+        <span>Абзацы мы объединили тегом <strong>&lt;div&gt;</strong>, а это <span style="color:red">слово</span> мы заключили тегом <strong>&lt;span&gt;</strong>.</span>
+        <span>С помощью встроенной таблицы стилей мы можем это слово красным цветом, а блок текста может получить зеленый цвет.</span>
+    </div>
+    <s>
+        <span>Обратите внимание, что тег <strong>&lt;div&gt;</strong> является блочным и это означает, что его содержимое 
+            всегда будет начинаться с новой строки, при этом элемент занимает всю доступную ширину.</span>
+        <span>Этот блок тоже содержит два абзаца. С помощью встроенной таблицы 
+            стилей мы не указали для всего блока цвет заднего фона - yellow, 
+            а <span style="color:green">для этога</span> слова
+            <em>green</em> (мы заключили его в тег &lt;span&gt;).
+        </span>
+    </s>
+    <div>
+        <p>Далее может пойти абзац с <u>главной</u> страницы интернет-магазина</p>
+        <h4>Главная</h4>
+        <p>Добро пожаловать в наш магазин! <u>Выберите</u> конкретную
+            категорию для покупки товара или просмотрите внизу весь список товаров, доступных в <strong>нашем магазине!</strong>
+        </p>
+        <p>Это <strong>не все возможнсти html</strong>!</p>
+    </div>
+    <p>Код <span style="color:coral">программы на языке js</span></p>
+    <pre>
+        function checkParent (src, dest)
+        {
+            while (src != null)
+            {
+                if (src.tagName == dest) 
+                    return src;
+                src = src.parentElement
+            }
+            return null
+        }
+    </pre>
+</body>
+</html>
+
+</body>
+</html>

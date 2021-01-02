@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ЛР 3</title>
+    <script src="generate.js" type="text/javascript"></script>
+</head>
+<body>
+    <h1>Справочник по HTML</h1>  
+    <p>Добро пожаловать на сайт по изучению
+        <strong>
+            <em>языка html.</em>
+            <em style="color:red;">
+                По всем вопросам обращайтесь к нам на email!
+            </em>
+            Нажмите на кнопку, чтобы сгенерировать древо этой страницы
+        </strong>
+        <div>
+            <button onclick="generate(document.body,'', 0); document.getElementById('add').innerHTML = str; this.disabled = true;">Сгенерировать</button>
+        </div>
+    </p>
+    <h3>Древо страницы</h3>
+    <div id="add"></div>
+</body>
+</html>
+

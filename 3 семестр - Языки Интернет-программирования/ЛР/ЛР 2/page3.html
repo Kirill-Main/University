@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛР 2 Пункт 3</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+            body {
+            margin-bottom: 40px;
+        }
+        main {
+            margin-top: 15px;
+        }
+        footer {
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .my-primary {
+            background-color: green;
+            color: white;
+        }
+        td.points {
+            text-align:right;
+            font-size:1.5em;
+            line-height: 1.5em;
+            width:45%;
+            vertical-align: text-top;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark my-primary">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-4">
+                <img src="avatar.jpg" alt="avatar" width="150" height="150">
+            </div>
+            <div class="col-8">
+                <p>Любой текст</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <h3>Форма Регистрация</h3>
+                <form action="#" method="POST">
+                    <table>
+                        <tr>
+                            <td>Фамилия</td>
+                            <td><input type="text" name="surname" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Имя</td>
+                            <td><input type="text" name="name" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Никнейм</td>
+                            <td><input type="text" name="username" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="email" name="email" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Пароль</td>
+                            <td><input type="password" name="pass1" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Повтор пароля</td>
+                            <td><input type="password" name="pass2" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" class="btn btn-primary" 
+                                value="Зарегистрироваться"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="col-4">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>№ п/п</th>
+                            <th>Наименование товара</th>
+                            <th>Ед. изм.</th>
+                            <th>Количество</th>
+                            <th>Цена за ед. изм., руб.</th>
+                            <th>Стоимость, руб.</th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>Томаты свежие</td><td>кг</td><td>15,20</td><td>69,00</td><td>1048,80</td>
+                          </tr>
+                          <tr>
+                            <td>2.</td>
+                            <td>Огурцы свежие</td><td>кг</td><td>2,50</td><td>48,00</td><td>120,00</td>
+                          </tr>
+                          <tr>
+                            <td colspan="5" style="text-align:right">ИТОГО:</td><td>1168,80</td>
+                          </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1>Произвольный текст</h1>
+                <div>
+                    <p>Заголовок имеет тег <em>&lt;h1&gt;</em>. Посмотрите, насколько он <strong>большой!</strong></p>
+                    <p>Абзацы мы объединили тегом <em>&lt;div&gt;</em>, а это <span style = "color:red">слово</span> мы заключили тегом <em>&lt;span&gt;</em>.</p>
+                    <p>С помощью встроенной таблицы стилей мы можем это слово красным цветом, а блок <span style = "color:green">текста может получить зеленый цвет</span>.</p>
+                </div>
+                <div style="background-color: yellow;">
+                    <p>Обратите внимание, что тег <em>&lt;div&gt;</em> является блочным и это означает, что его содержимое 
+                        всегда будет начинаться с новой строки, при этом элемент занимает всю доступную ширину.</p>
+                    <p>Этот блок тоже содержит два абзаца. С помощью встроенной таблицы 
+                        стилей мы указали для всего блока цвет заднего фона - yellow, 
+                        а для этога <span style = "background-color:orangered">слова</span>
+                        orangeRed (мы заключили его в тег &lt;span&gt;).</p>
+                </div>
+                <div>
+                    <p>Далее может пойти абзац с главной <u>страницы интернет-магазина</u></p>
+                    <h4>Главная</h4>
+                    <p>Добро пожаловать в наш магазин! Выберите <u>конкретную
+                        категорию</u> для покупки товара или просмотрите внизу весь список товаров, доступных в нашем магазине!
+                    </p>
+                    <p>Это <em>не все возможнсти html</em>!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="my-primary">
+        <div class="container">
+            <p class="footer-text">Footer</p>
+        </div>
+    </footer>
+</body>
+</html>
