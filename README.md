@@ -1,4 +1,5 @@
-﻿# University2
+# University
+
 All university works are here
 
 Here are links to 8-12 labs and the final work
