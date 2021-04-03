@@ -18,18 +18,18 @@ _create PROC
     mov esi,[esp+16]
     
     ; переменные, нужные для цикла
-    mov ecx,255
+    mov ecx,[esp+20]
     mov ebx,0
     
     mov saveD,edi
     cycle:
         ; сохраняем ecx
         mov saveC,ecx
-        
+    
+        push eax
+        call ?print@@YGXD@Z ; вызов внешней функции
         cld
         mov al,[edi+ebx] ; получаем текущий элемент
-        push al
-        call ?print@@YGXD@Z ; вызов внешней функции
         mov ecx,255
         mov saveD,edi
         mov edi,esi ; сбрасываем указатель
@@ -48,6 +48,12 @@ _create PROC
         
             inc ebx
     loop cycle
+    
+    ; добавляем 0 в конец строки
+    mov al,0
+    mov edi,esi
+    add edi,count
+    stosb
     
     ; эпилог
     pop ebx

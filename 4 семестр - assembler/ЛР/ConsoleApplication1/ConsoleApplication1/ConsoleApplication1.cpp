@@ -9,16 +9,16 @@ extern "C" void __cdecl create(char* string, char* result, int length);
 
 int main()
 {
-    char string[255], result[255], *pointer;
+    char string[255], result[255];
 
     printf("Input string: ");
-    fgets(string, 255, stdin);
+    gets_s(string, 255);
 
+    printf("\n");
     create(string, result, strlen(string));
+    printf("\n");
 
-    pointer = strchr(result, '\n');
-    result[pointer - result + 1] = '\0';
-    printf("Result dictionary: %s", result);
+    printf("Result dictionary: %s\n", result);
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

@@ -2,7 +2,7 @@
 
 All university works are here
 
-Here are links to 8-12 labs and the final work
+Here are links to 8-12 labs and the final work from the third semester
 
 * [Lab 8](https://github.com/Kirill-Main/Rails-Lab8)
 

@@ -25,9 +25,7 @@ _create PROC
     cycle:
         ; сохраняем ecx
         mov saveC,ecx
-    
-        push eax
-        call ?print@@YGXD@Z ; вызов внешней функции
+        
         cld
         mov al,[edi+ebx] ; получаем текущий элемент
         mov ecx,255
@@ -45,9 +43,18 @@ _create PROC
             ; восстаналиваем данные
             mov edi,saveD
             mov ecx,saveC
-        
+            
+            push eax
+            call ?print@@YGXD@Z ; вызов внешней функции
+            pop eax
             inc ebx
     loop cycle
+    
+    ; добавляем 0 в конец строки
+    mov al,0
+    mov edi,esi
+    add edi,count
+    stosb
     
     ; эпилог
     pop ebx
