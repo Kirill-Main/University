@@ -50,7 +50,7 @@ string scan(string str)
 
             if (types.find(temp) != types.end() || services.find(temp) != services.end())
             {
-                cout << ">> Service word " + temp + "\n";
+                cout << ">> Service word \"" + temp + "\"\n";
                 if (services.find(temp) != services.end())
                 {
                     result += (temp == "procedure") ? "P" : (temp == "function") ? "F" : "S";
@@ -72,14 +72,14 @@ string scan(string str)
                     }
                 }
 
-                cout << ">> Identifier " + temp + "\n";
+                cout << ">> Identifier \"" + temp + "\"\n";
                 result += "I";
                 copy.erase(copy.begin(), copy.begin() + i);
             }
         }
         else
         {
-            cout << ">> Service symbol " << copy[0] << "\n";
+            cout << ">> Service symbol '" << copy[0] << "'\n";
             string sep{ copy[0] };
             result += sep;
             copy.erase(copy.begin());
