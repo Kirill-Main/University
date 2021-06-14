@@ -142,9 +142,6 @@
     <ClCompile Include="ConsoleApplication1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="module.h" />
-  </ItemGroup>
-  <ItemGroup>
     <Object Include="..\..\Lab05Part2\Lab05Part2.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -26,7 +26,7 @@ _create PROC
         ; сохраняем ecx
         mov saveC,ecx
     
-        push ax
+        push eax
         call ?print@@YGXD@Z ; вызов внешней функции
         cld
         mov al,[edi+ebx] ; получаем текущий элемент

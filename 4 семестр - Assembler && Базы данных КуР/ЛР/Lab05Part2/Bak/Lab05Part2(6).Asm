@@ -1,30 +1,32 @@
          .586
          .MODEL  flat
          .DATA
-count DWORD 0
 saveC DWORD ?
 saveD DWORD ?
-         .CODE
-public _create 
-externdef ?print@@YGXD@Z:near
 
-_create PROC 
-    ; пролог
-    push ecx
-    push ebx
+         .CODE
+externdef stdcall print:near
+print proto stdcall char:byte
+
+create PROC C public uses ecx ebx edi esi, str:ptr byte, res:ptr byte, len: sdword
+    LOCAL count:dword
+    mov count,0
     
     ; сохраняем адреса строки string и result
-    mov edi,[esp+12]
-    mov esi,[esp+16]
+    mov edi,str
+    mov esi,res
     
     ; переменные, нужные для цикла
-    mov ecx,[esp+20]
+    mov ecx,len
     mov ebx,0
     
     mov saveD,edi
     cycle:
         ; сохраняем ecx
         mov saveC,ecx
+        
+        push [edi+ebx] ; кладем текущий элемент в стек для передачи в функцию
+        Invoke print,[edi+ebx] ; вызов внешней функции
         
         cld
         mov al,[edi+ebx] ; получаем текущий элемент
@@ -43,10 +45,7 @@ _create PROC
             ; восстаналиваем данные
             mov edi,saveD
             mov ecx,saveC
-            
-            push eax
-            call ?print@@YGXD@Z ; вызов внешней функции
-            pop eax
+        
             inc ebx
     loop cycle
     
@@ -56,12 +55,8 @@ _create PROC
     add edi,count
     stosb
     
-    ; эпилог
-    pop ebx
-    pop ecx
-    
     ret
 
-_create endp
+create endp
 
 end

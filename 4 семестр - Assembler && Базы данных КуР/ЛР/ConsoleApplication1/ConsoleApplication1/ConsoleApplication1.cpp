@@ -2,13 +2,17 @@
 //
 
 #include <stdio.h>
-#include <cstring>
-#include "module.h"
+#include <string.h>
+
+extern "C" void __stdcall print(char c) {
+    static int i = 1;
+    printf("Iteration = %d, symbol = '%c'\n", i, c);
+    i++;
+}
 
 extern "C" void __cdecl create(char* string, char* result, int length);
 
-int main()
-{
+int main() {
     char string[255], result[255];
 
     printf("Input string: ");

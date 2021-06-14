@@ -20,11 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="module.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <Object Include="..\..\Lab05Part2\Lab05Part2.obj">
       <Filter>Файлы ресурсов</Filter>
     </Object>
