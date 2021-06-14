@@ -5,7 +5,7 @@
 #include <iomanip>
 #include <vector>
 
-void printMatrix(const std::vector<std::vector<int>>& matrix) {
+void print_matrix(const std::vector<std::vector<int>>& matrix) {
     std::cout << std::endl;
 
     for (size_t i = 0; i < matrix.size(); i++) {
@@ -19,7 +19,7 @@ void printMatrix(const std::vector<std::vector<int>>& matrix) {
     std::cout << std::endl;
 }
 
-void inputMachines(std::vector<std::vector<int>>& first, std::vector<std::vector<int>>& second) {
+void input_machines(std::vector<std::vector<int>>& first, std::vector<std::vector<int>>& second) {
     /* Not equal machines
     first = {
         {1, -1, 0, -1},
@@ -66,7 +66,7 @@ void inputMachines(std::vector<std::vector<int>>& first, std::vector<std::vector
     std::cout << std::endl;
 }
 
-std::vector<std::vector<int>> createMatrix(const std::vector<std::vector<int>>& first, const std::vector<std::vector<int>>& second) {
+std::vector<std::vector<int>> create_matrix(const std::vector<std::vector<int>>& first, const std::vector<std::vector<int>>& second) {
     std::vector<std::vector<int>> res(
         first.size() * second.size(),
         std::vector<int>(first[0].size() + 1)
@@ -80,40 +80,40 @@ std::vector<std::vector<int>> createMatrix(const std::vector<std::vector<int>>& 
         }
     }
 
-    size_t firstI, secondI;
+    size_t first_i, second_i;
     for (size_t i = 0; i < res.size(); i++) {
         if (first.size() > second.size()) {
-            firstI = res[i][0] / 10, secondI = res[i][0] % 10;
+            first_i = res[i][0] / 10, second_i = res[i][0] % 10;
         }
         else {
-            firstI = res[i][0] % 10, secondI = res[i][0] / 10;
+            first_i = res[i][0] % 10, second_i = res[i][0] / 10;
         }
 
-        if (first[firstI][0] == -1 || second[secondI][0] == -1) {
+        if (first[first_i][0] == -1 || second[second_i][0] == -1) {
             res[i][1] = -1;
             res[i][3] = -1;
         }
         else {
-            res[i][1] = first[firstI][0] * 10 + second[secondI][0];
-            res[i][3] = first[firstI][2] * 10 + second[secondI][2];
+            res[i][1] = first[first_i][0] * 10 + second[second_i][0];
+            res[i][3] = first[first_i][2] * 10 + second[second_i][2];
         }
 
-        if (first[firstI][1] == -1 || second[secondI][1] == -1) {
+        if (first[first_i][1] == -1 || second[second_i][1] == -1) {
             res[i][2] = -1;
             res[i][4] = -1;
         } 
         else {
-            res[i][2] = first[firstI][1] * 10 + second[secondI][1];
-            res[i][4] = first[firstI][3] * 10 + second[secondI][3];
+            res[i][2] = first[first_i][1] * 10 + second[second_i][1];
+            res[i][4] = first[first_i][3] * 10 + second[second_i][3];
         }
     }
 
     std::cout << "After creating matrix" << std::endl;
-    printMatrix(res);
+    print_matrix(res);
     return res;
 }
 
-void deleteVertexes(std::vector<std::vector<int>>& matrix) {
+void delete_vertexes(std::vector<std::vector<int>>& matrix) {
     for (size_t i = 1; i < matrix.size(); i++) {
         size_t state = matrix[i][0];
 
@@ -132,10 +132,10 @@ void deleteVertexes(std::vector<std::vector<int>>& matrix) {
     }
 
     std::cout << "After deleting vertexes" << std::endl;
-    printMatrix(matrix);
+    print_matrix(matrix);
 }
 
-bool isEqual(const std::vector<std::vector<int>>& matrix) {
+bool is_equal(const std::vector<std::vector<int>>& matrix) {
     for (size_t i = 0; i < matrix.size(); i++) {
         if (matrix[i][3] != -1 && matrix[i][3] / 10 != matrix[i][3] % 10) {
             return false;
@@ -158,10 +158,10 @@ void start() {
         }
 
         std::vector<std::vector<int>> first, second;
-        inputMachines(first, second);
-        auto matrix = createMatrix(first, second);
-        deleteVertexes(matrix);
-        std::cout << std::string("Result: machines are ") + (isEqual(matrix) ? "equal" : "not equal") << std::endl << std::endl;
+        input_machines(first, second);
+        auto matrix = create_matrix(first, second);
+        delete_vertexes(matrix);
+        std::cout << std::string("Result: machines are ") + (is_equal(matrix) ? "equal" : "not equal") << std::endl << std::endl;
     }
 }
 
